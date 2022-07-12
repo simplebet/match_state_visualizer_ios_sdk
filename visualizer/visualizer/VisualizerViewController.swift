@@ -34,7 +34,7 @@ public class VisualizerViewController: UIViewController {
             }
             
             visualizerWebView.load(URLRequest(url: visualizerURL))
-        }
+    }
         
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -44,5 +44,9 @@ public class VisualizerViewController: UIViewController {
         let yPosition = Int(view.frame.height)/2 - height/2
         visualizerWebView.frame = CGRect(x:  xPosition , y: yPosition, width: width, height: height)
    }
+    
+    public func refresh(){
+        visualizerWebView.reload()
+    }
 
 }
