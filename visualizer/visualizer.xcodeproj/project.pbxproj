@@ -10,6 +10,7 @@
 		C101111D287CDC0700FEDADE /* visualizer.h in Headers */ = {isa = PBXBuildFile; fileRef = C101111C287CDC0700FEDADE /* visualizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1011125287CDCF800FEDADE /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1011123287CDCF800FEDADE /* VisualizerViewController.swift */; };
 		C1011126287CDCF800FEDADE /* VisualizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1011124287CDCF800FEDADE /* VisualizerViewController.xib */; };
+		C101112A287DEADD00FEDADE /* MatchVisualizerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1011129287DEADD00FEDADE /* MatchVisualizerConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		C101111C287CDC0700FEDADE /* visualizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = visualizer.h; sourceTree = "<group>"; };
 		C1011123287CDCF800FEDADE /* VisualizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerViewController.swift; sourceTree = "<group>"; };
 		C1011124287CDCF800FEDADE /* VisualizerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisualizerViewController.xib; sourceTree = "<group>"; };
+		C1011129287DEADD00FEDADE /* MatchVisualizerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVisualizerConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 				C101111C287CDC0700FEDADE /* visualizer.h */,
 				C1011123287CDCF800FEDADE /* VisualizerViewController.swift */,
 				C1011124287CDCF800FEDADE /* VisualizerViewController.xib */,
+				C1011129287DEADD00FEDADE /* MatchVisualizerConfiguration.swift */,
 			);
 			path = visualizer;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C101112A287DEADD00FEDADE /* MatchVisualizerConfiguration.swift in Sources */,
 				C1011125287CDCF800FEDADE /* VisualizerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
