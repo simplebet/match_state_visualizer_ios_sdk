@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
   s.source = { :git => "https://github.com/SimpleBet/match_state_visualizer_ios_sdk.git",
   :tag => "#{s.version}" }
   
-  # 7 COLOQUE AQUI TODAS AS BIBLIOTECAS NATIVAS QUE FOR USAR
+  # 7 
   s.framework = "UIKit"
   s.framework = "WebKit"
   
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.source_files = "visualizer/**/*.{swift}"
   
   # 9
-  #s.resources = "SimpleStereoScene/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  s.resources = "visualizer/**/*.xib"
   
   # 10
   s.swift_version = "5.0"
