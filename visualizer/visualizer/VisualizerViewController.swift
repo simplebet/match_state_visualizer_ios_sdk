@@ -10,7 +10,8 @@ import WebKit
 
 public class VisualizerViewController: UIViewController {
     
-    let visualizerWebView = WKWebView()
+    var visualizerWebView = WKWebView()
+    
     
     var matchVisualizerConfiguration: MatchVisualizerConfiguration
     
@@ -26,27 +27,41 @@ public class VisualizerViewController: UIViewController {
     
 
     public override func viewDidLoad() {
-            super.viewDidLoad()
-            view.addSubview(visualizerWebView)
+        super.viewDidLoad()
+        let config = WKWebViewConfiguration()
+        let userContentController = WKUserContentController()
+        userContentController.add(self, name: "hostApp")
+        config.userContentController = userContentController
+   
+        let screenRect = UIScreen.main.bounds
+        let screenWidth = screenRect.size.width
+
+        
+        visualizerWebView = WKWebView(frame: CGRect(x:  0 , y: 0, width: Int(screenWidth), height: Int(screenWidth * (70.0 / 120.0))), configuration: config)
+  
+        
+        view.addSubview(visualizerWebView)
             
-            guard let visualizerURL = URL(string: "https://simplebet.io/") else{
+            guard let visualizerURL = URL(string: "https://thawing-eyrie-36823.herokuapp.com/game_sim/previews/40c84354-f16b-4c1f-b568-7a11012af1a8/index.html?app_version=1&dev_features=auth_bypass%2Cauto_start_timer%2C%2Cno_viz_fsm&display=embedded&route=%2Fvisualizer%2Fnfl%2F61ceac92-6b2b-46b6-95e1-1f6f0bcad89d") else{
                 return
             }
             
             visualizerWebView.load(URLRequest(url: visualizerURL))
     }
         
-    public override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        let width = matchVisualizerConfiguration.width ?? 200
-        let height = matchVisualizerConfiguration.height ?? 300
-        let xPosition = Int(view.frame.width)/2 - width/2
-        let yPosition = Int(view.frame.height)/2 - height/2
-        visualizerWebView.frame = CGRect(x:  xPosition , y: yPosition, width: width, height: height)
-   }
     
     public func refresh(){
         visualizerWebView.reload()
+    }
+
+}
+
+extension VisualizerViewController: WKScriptMessageHandler {
+    public func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print(message.name)
+        if message.name == "refreshPage"{
+            refresh()
+        }
     }
 
 }
