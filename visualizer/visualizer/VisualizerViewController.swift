@@ -42,16 +42,21 @@ public class VisualizerViewController: UIViewController {
         
         view.addSubview(visualizerWebView)
             
-            guard let visualizerURL = URL(string: "https://thawing-eyrie-36823.herokuapp.com/game_sim/previews/40c84354-f16b-4c1f-b568-7a11012af1a8/index.html?app_version=1&dev_features=auth_bypass%2Cauto_start_timer%2C%2Cno_viz_fsm&display=embedded&route=%2Fvisualizer%2Fnfl%2F61ceac92-6b2b-46b6-95e1-1f6f0bcad89d") else{
-                return
-            }
-            
-            visualizerWebView.load(URLRequest(url: visualizerURL))
+        guard let visualizerURL = URL(string: "https://matchviz.staging.simplebet.io/?dev_features=auth_bypass&proxy=thawing-eyrie-36823.herokuapp.com/proxy/match_visualizer&route=/visualizer/nfl/61ceac92-6b2b-46b6-95e1-1f6f0bcad89d") else{
+            return
+        }
+        
+        visualizerWebView.load(URLRequest(url: visualizerURL))
     }
         
     
     public func refresh(){
         visualizerWebView.reload()
+    }
+    
+    public func sendAnalytics(event: String , params: String ){
+        visualizerWebView.evaluateJavaScript(
+                   "postMessage({'analytics': {'event': '\(event)', 'params':{\(params)} } })", completionHandler: nil)
     }
 
 }
