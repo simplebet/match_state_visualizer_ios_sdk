@@ -11,6 +11,7 @@
 		C1011125287CDCF800FEDADE /* VisualizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1011123287CDCF800FEDADE /* VisualizerViewController.swift */; };
 		C1011126287CDCF800FEDADE /* VisualizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C1011124287CDCF800FEDADE /* VisualizerViewController.xib */; };
 		C101112A287DEADD00FEDADE /* MatchVisualizerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1011129287DEADD00FEDADE /* MatchVisualizerConfiguration.swift */; };
+		C1C2534F288F29A900BE6373 /* Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C2534E288F29A900BE6373 /* Teams.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		C1011123287CDCF800FEDADE /* VisualizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizerViewController.swift; sourceTree = "<group>"; };
 		C1011124287CDCF800FEDADE /* VisualizerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisualizerViewController.xib; sourceTree = "<group>"; };
 		C1011129287DEADD00FEDADE /* MatchVisualizerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchVisualizerConfiguration.swift; sourceTree = "<group>"; };
+		C1C2534E288F29A900BE6373 /* Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teams.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				C1011123287CDCF800FEDADE /* VisualizerViewController.swift */,
 				C1011124287CDCF800FEDADE /* VisualizerViewController.xib */,
 				C1011129287DEADD00FEDADE /* MatchVisualizerConfiguration.swift */,
+				C1C2534E288F29A900BE6373 /* Teams.swift */,
 			);
 			path = visualizer;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1C2534F288F29A900BE6373 /* Teams.swift in Sources */,
 				C101112A287DEADD00FEDADE /* MatchVisualizerConfiguration.swift in Sources */,
 				C1011125287CDCF800FEDADE /* VisualizerViewController.swift in Sources */,
 			);

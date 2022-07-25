@@ -41,8 +41,15 @@ public class VisualizerViewController: UIViewController {
   
         
         view.addSubview(visualizerWebView)
+        
+        setMatchConfiguration(configuration: matchVisualizerConfiguration)
             
-        guard let visualizerURL = URL(string: "https://matchviz.staging.simplebet.io/?dev_features=auth_bypass&proxy=thawing-eyrie-36823.herokuapp.com/proxy/match_visualizer&route=/visualizer/nfl/61ceac92-6b2b-46b6-95e1-1f6f0bcad89d") else{
+        
+    }
+    
+    
+    public func setMatchConfiguration( configuration: MatchVisualizerConfiguration) -> Void{
+        guard let visualizerURL = URL(string: "https://matchviz.staging.simplebet.io/?\(configuration.toUrlParams())") else{
             return
         }
         
@@ -54,9 +61,14 @@ public class VisualizerViewController: UIViewController {
         visualizerWebView.reload()
     }
     
-    public func sendAnalytics(event: String , params: String ){
+    public func sendAnalytics(event: String , params: [String:String] ){
+        var paramsAsJson: String = "{";
+                for (k, v) in params {
+                    paramsAsJson.append("\'\(k)\'\(v)\'");
+                }
+                paramsAsJson.append("}");
         visualizerWebView.evaluateJavaScript(
-                   "postMessage({'analytics': {'event': '\(event)', 'params':{\(params)} } })", completionHandler: nil)
+                   "postMessage({'analytics': {'event': '\(event)', 'params':{\(paramsAsJson)} } })", completionHandler: nil)
     }
 
 }
