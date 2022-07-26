@@ -14,19 +14,19 @@ public class MatchVisualizerConfiguration: NSObject {
     public static let LEAGUE_CFB: String = "CFB";
     
     
-    var width: Int?
+    public var width: Int?
     
-    var height: Int?
+    public var height: Int?
     
     //API Key provided by Simplebet
-    var apiKey: String?
+    public var apiKey: String?
 
 
     // The away and home teams abbreviations
-    var teams: [String]?
+    public var teams: [String]?
 
     // The UTC Start time of the match
-    var startTime: String?
+    public var startTime: String?
     
 
     public func  toUrlParams() -> String {
