@@ -7,42 +7,44 @@
 
 import UIKit
 
- public struct Teams {
-    
-    public struct Nfl{
+ public class Teams {
+     
+    public class Nfl{
+        
+        public init(){}
   
-        let GB: String = "647ca14b-e4e1-4e24-a703-fde16e8ea73f";
-        let DET: String = "e355ef7f-1add-4be3-aa15-5d1744a8ffc4";
-        let LV: String = "30e8f31d-213c-41df-a1f8-8255290305a7";
-        let WAS:String = "9f20d618-2741-41cc-9089-00ac1d32ce77";
-        let MIA:String = "f8acbaf4-51fc-409f-97a4-e68ab63f7ee3";
-        let NE:String = "9b3a1a52-c2a9-4cca-a36e-d8f5ede1a07a";
-        let HOU:String = "08a3d65a-e016-45b1-a138-85877d8db958";
-        let ARI:String = "4838404d-c4e8-472c-ae4b-355375ecd529";
-        let CLE:String = "c5698110-8e65-4048-878c-5752788470c5";
-        let IND:String = "f935afa4-35da-40fa-a51f-e1f54696381b";
-        let TEN:String = "c1ff0725-55b9-40bb-8a84-aa337dd129a7";
-        let BUF:String = "34f86ed1-f87f-4bcf-b14f-7faff246d209";
-        let NO:String = "06c79977-27de-45a6-b392-c8830cd3445e";
-        let KC:String = "6bc3a40e-9bab-44ba-a356-b66ee9b6d0ef";
-        let PHI:String = "0759d4f9-7813-490c-a450-57693d0a3ca8";
-        let CHI:String = "cf49542a-9c1a-44f0-bd5a-ca685578dd55";
-        let BAL:String = "d6d86554-f5b8-4322-9ed0-cd7ca42a388c";
-        let SEA:String = "571f1cee-7f8a-4576-aef0-bab963e6f49a";
-        let TB:String = "7f0f7ecd-3555-4bdc-b9f3-3a3d6b248c85";
-        let DAL:String = "12e62407-ff7d-45c3-9bec-e77f4ab4894f";
-        let NYJ:String = "2285fdbf-ce60-4bea-a6cc-e43817c6758c";
-        let NYG:String = "f02d7a98-433a-444a-a086-bfa039654a7a";
-        let PIT:String = "20ba3fbf-5413-4801-a0ea-b9cae1c8e671";
-        let ATL:String = "eac74442-bd2d-42a7-8ce9-3aa40fa93937";
-        let JAX:String = "f5691a92-2b60-4a33-b4ae-6e28189eceb6";
-        let CAR:String = "8a28945c-22df-4f78-8e6a-5097e5ff1bb0";
-        let MIN:String = "3a0c07f6-201b-4923-a75e-76716d469acb";
-        let CIN:String = "bc17433a-bf6a-40b3-a385-59bb7c34e393";
-        let LAR:String = "be027b5f-26c0-47bd-921f-4ebc307fbaa4";
-        let SF:String = "a1c8297c-18a2-4cf6-911b-085fe9344650";
-        let DEN:String = "5b800a67-a4c6-4b13-a697-a8e7b6b1cbfb";
-        let LAC:String = "80a0cc14-7bdb-44c0-b77b-3fe2dd69988c";
+        public let GB: String = "647ca14b-e4e1-4e24-a703-fde16e8ea73f";
+        public let DET: String = "e355ef7f-1add-4be3-aa15-5d1744a8ffc4";
+        public let LV: String = "30e8f31d-213c-41df-a1f8-8255290305a7";
+        public let WAS:String = "9f20d618-2741-41cc-9089-00ac1d32ce77";
+        public let MIA:String = "f8acbaf4-51fc-409f-97a4-e68ab63f7ee3";
+        public let NE:String = "9b3a1a52-c2a9-4cca-a36e-d8f5ede1a07a";
+        public let HOU:String = "08a3d65a-e016-45b1-a138-85877d8db958";
+        public let ARI:String = "4838404d-c4e8-472c-ae4b-355375ecd529";
+        public let CLE:String = "c5698110-8e65-4048-878c-5752788470c5";
+        public let IND:String = "f935afa4-35da-40fa-a51f-e1f54696381b";
+        public let TEN:String = "c1ff0725-55b9-40bb-8a84-aa337dd129a7";
+        public let BUF:String = "34f86ed1-f87f-4bcf-b14f-7faff246d209";
+        public let NO:String = "06c79977-27de-45a6-b392-c8830cd3445e";
+        public let KC:String = "6bc3a40e-9bab-44ba-a356-b66ee9b6d0ef";
+        public let PHI:String = "0759d4f9-7813-490c-a450-57693d0a3ca8";
+        public let CHI:String = "cf49542a-9c1a-44f0-bd5a-ca685578dd55";
+        public let BAL:String = "d6d86554-f5b8-4322-9ed0-cd7ca42a388c";
+        public let SEA:String = "571f1cee-7f8a-4576-aef0-bab963e6f49a";
+        public let TB:String = "7f0f7ecd-3555-4bdc-b9f3-3a3d6b248c85";
+        public let DAL:String = "12e62407-ff7d-45c3-9bec-e77f4ab4894f";
+        public let NYJ:String = "2285fdbf-ce60-4bea-a6cc-e43817c6758c";
+        public let NYG:String = "f02d7a98-433a-444a-a086-bfa039654a7a";
+        public let PIT:String = "20ba3fbf-5413-4801-a0ea-b9cae1c8e671";
+        public let ATL:String = "eac74442-bd2d-42a7-8ce9-3aa40fa93937";
+        public let JAX:String = "f5691a92-2b60-4a33-b4ae-6e28189eceb6";
+        public let CAR:String = "8a28945c-22df-4f78-8e6a-5097e5ff1bb0";
+        public let MIN:String = "3a0c07f6-201b-4923-a75e-76716d469acb";
+        public let CIN:String = "bc17433a-bf6a-40b3-a385-59bb7c34e393";
+        public let LAR:String = "be027b5f-26c0-47bd-921f-4ebc307fbaa4";
+        public let SF:String = "a1c8297c-18a2-4cf6-911b-085fe9344650";
+        public let DEN:String = "5b800a67-a4c6-4b13-a697-a8e7b6b1cbfb";
+        public let LAC:String = "80a0cc14-7bdb-44c0-b77b-3fe2dd69988c";
         
       public static let nflAbbrId: [String: String] =
         ["GB": "647ca14b-e4e1-4e24-a703-fde16e8ea73f",
@@ -83,9 +85,9 @@ import UIKit
         }
     }
     
-    public struct Cfb{
+    public class Cfb{
         
-       
+        public init(){}
         
         let INCAR:String = "b7fbf431-58e5-4983-9019-f791f5f36874";
         let ARZ:String = "4c84e245-3cc7-43ff-80ac-a4a8a8aece20";
