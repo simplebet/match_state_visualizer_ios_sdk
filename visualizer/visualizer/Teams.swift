@@ -7,9 +7,10 @@
 
 import UIKit
 
- public class Teams {
+ public struct Teams {
     
-    public class Nfl{
+    public struct Nfl{
+  
         let GB: String = "647ca14b-e4e1-4e24-a703-fde16e8ea73f";
         let DET: String = "e355ef7f-1add-4be3-aa15-5d1744a8ffc4";
         let LV: String = "30e8f31d-213c-41df-a1f8-8255290305a7";
@@ -82,7 +83,10 @@ import UIKit
         }
     }
     
-    class Cfb{
+    public struct Cfb{
+        
+       
+        
         let INCAR:String = "b7fbf431-58e5-4983-9019-f791f5f36874";
         let ARZ:String = "4c84e245-3cc7-43ff-80ac-a4a8a8aece20";
         let CMICH: String = "adf595a8-881d-40ad-a41a-63640779764a";
