@@ -9,11 +9,10 @@ import UIKit
 import WebKit
 
 public class VisualizerViewController: UIViewController {
+   
+    var visualizerWebView: WKWebView!
     
-    var visualizerWebView = WKWebView()
-    
-    
-    var matchVisualizerConfiguration: MatchVisualizerConfiguration
+    public var matchVisualizerConfiguration: MatchVisualizerConfiguration
     
     
     public init(matchVisualizerConfiguration: MatchVisualizerConfiguration) {
@@ -24,10 +23,10 @@ public class VisualizerViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
         let config = WKWebViewConfiguration()
         let userContentController = WKUserContentController()
         userContentController.add(self, name: "hostApp")
@@ -35,38 +34,34 @@ public class VisualizerViewController: UIViewController {
    
         let screenRect = UIScreen.main.bounds
         let screenWidth = screenRect.size.width
-
         
         visualizerWebView = WKWebView(frame: CGRect(x:  0 , y: 0, width: Int(screenWidth), height: Int(screenWidth * (70.0 / 120.0))), configuration: config)
   
-        
         view.addSubview(visualizerWebView)
         
         setMatchConfiguration(configuration: matchVisualizerConfiguration)
-            
         
     }
-    
-    
+        
     public func setMatchConfiguration( configuration: MatchVisualizerConfiguration) -> Void{
         guard let visualizerURL = URL(string: "https://matchviz.staging.simplebet.io/?\(configuration.toUrlParams())") else{
             return
         }
-        
+
         visualizerWebView.load(URLRequest(url: visualizerURL))
+
     }
-        
-    
+
     public func refresh(){
         visualizerWebView.reload()
     }
-    
+
     public func sendAnalytics(event: String , params: [String:String] ){
         var paramsAsJson: String = "{";
-                for (k, v) in params {
-                    paramsAsJson.append("\'\(k)\'\(v)\'");
-                }
-                paramsAsJson.append("}");
+        for (k, v) in params {
+            paramsAsJson.append("\'\(k)\'\(v)\'");
+        }
+        paramsAsJson.append("}");
         visualizerWebView.evaluateJavaScript(
                    "postMessage({'analytics': {'event': '\(event)', 'params':{\(paramsAsJson)} } })", completionHandler: nil)
     }
