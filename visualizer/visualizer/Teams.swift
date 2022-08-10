@@ -1,9 +1,3 @@
-//
-//  Teams.swift
-//  visualizer
-//
-//  Created by Francila Weidt Neiva on 25/07/22.
-//
 
 import UIKit
 

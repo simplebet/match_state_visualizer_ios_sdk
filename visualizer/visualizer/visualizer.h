@@ -1,9 +1,3 @@
-//
-//  visualizer.h
-//  visualizer
-//
-//  Created by Francila Weidt Neiva on 11/07/22.
-//
 
 #import <Foundation/Foundation.h>
 

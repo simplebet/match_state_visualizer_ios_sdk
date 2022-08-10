@@ -1,9 +1,3 @@
-//
-//  VisualizerViewController.swift
-//  visualizer
-//
-//  Created by Francila Weidt Neiva on 11/07/22.
-//
 
 import UIKit
 import WebKit
@@ -44,12 +38,10 @@ public class VisualizerViewController: UIViewController {
     }
         
     public func setMatchConfiguration( configuration: MatchVisualizerConfiguration) -> Void{
-        guard let visualizerURL = URL(string: "https://matchviz.staging.simplebet.io/?\(configuration.toUrlParams())") else{
+        guard let visualizerURL = URL(string: configuration.toUrlParams()) else{
             return
         }
-
         visualizerWebView.load(URLRequest(url: visualizerURL))
-
     }
 
     public func refresh(){
