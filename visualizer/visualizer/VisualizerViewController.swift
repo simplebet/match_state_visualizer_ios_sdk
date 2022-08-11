@@ -22,6 +22,7 @@ public class VisualizerViewController: UIViewController {
         super.viewDidLoad()
         
         let config = WKWebViewConfiguration()
+        config.preferences.javaScriptEnabled = true
         let userContentController = WKUserContentController()
         userContentController.add(self, name: "hostApp")
         config.userContentController = userContentController
@@ -38,9 +39,10 @@ public class VisualizerViewController: UIViewController {
     }
         
     public func setMatchConfiguration( configuration: MatchVisualizerConfiguration) -> Void{
-        guard let visualizerURL = URL(string: configuration.toUrlParams()) else{
+        guard let visualizerURL = URL(string: configuration.toUrl()) else{
             return
         }
+        
         visualizerWebView.load(URLRequest(url: visualizerURL))
     }
 
@@ -49,13 +51,14 @@ public class VisualizerViewController: UIViewController {
     }
 
     public func sendAnalytics(event: String , params: [String:String] ){
+        print("event \(event) params \(params)")
         var paramsAsJson: String = "{";
         for (k, v) in params {
-            paramsAsJson.append("\'\(k)\'\(v)\'");
+            paramsAsJson.append("\'\(k)\':\'\(v)\'");
         }
         paramsAsJson.append("}");
         visualizerWebView.evaluateJavaScript(
-                   "postMessage({'analytics': {'event': '\(event)', 'params':{\(paramsAsJson)} } })", completionHandler: nil)
+                   "postMessage({'analytics': {'event': '\(event)', 'params':\(paramsAsJson) } } )", completionHandler: nil)
     }
 
 }

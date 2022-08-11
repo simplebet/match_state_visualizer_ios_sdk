@@ -25,14 +25,14 @@ public class MatchVisualizerConfiguration{
         if(!teams.isEmpty){
             teamsForUrl = "teams=\(teams[0]),\(teams[1])";
         }
-        return "api_key=\(apiKey)&teams=\(teamsForUrl)&start_time=\(startTime)" ;
+        return "api_key=\(apiKey)&\(teamsForUrl)&start_time=\(startTime)" ;
     }
     
     public func toUrl() -> String{
         var url: String
         url = "https://matchviz" + environment + ".simplebet.io/";
         if (environment == Environment.DEV) {
-            url = "http://10.0.2.2:8080/";
+            url = "http://localhost:8000/";
         }
         return url + "?" + toUrlParams();
     }
