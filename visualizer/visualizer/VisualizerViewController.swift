@@ -50,15 +50,14 @@ public class VisualizerViewController: UIViewController {
         visualizerWebView.reload()
     }
 
-    public func sendAnalytics(event: String , params: [String:String] ){
-        print("event \(event) params \(params)")
-        var paramsAsJson: String = "{";
-        for (k, v) in params {
-            paramsAsJson.append("\'\(k)\':\'\(v)\'");
+     public func sendAnalytics(event: String , params: [String:String] ){
+
+        if let jsonData = try? JSONSerialization.data(withJSONObject: params, options: []){
+            let jsonString = String(data: jsonData, encoding: String.Encoding.ascii)!
+            visualizerWebView.evaluateJavaScript(
+                "postMessage({'analytics': {'event': '\(event)', 'params':\(jsonString) } } )", completionHandler: nil)
         }
-        paramsAsJson.append("}");
-        visualizerWebView.evaluateJavaScript(
-                   "postMessage({'analytics': {'event': '\(event)', 'params':\(paramsAsJson) } } )", completionHandler: nil)
+        
     }
 
 }
